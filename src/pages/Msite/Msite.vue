@@ -1,7 +1,7 @@
 <template>
   <section class="msite">
     <!--首页头部-->
-    <Header title="xxx">
+    <Header :title="address.name || '定位中'">
           <span class="header_search" slot="left">
             <i class="iconfont icon-search1"></i>
           </span>
@@ -311,6 +311,7 @@
 <script>
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
+import {mapState} from 'vuex'
 
 export default {
   name: "Msite",
@@ -322,6 +323,9 @@ export default {
         el:'.swiper-pagination',
       }
     })
+  },
+  computed:{
+    ...mapState(['address'])
   }
 }
 </script>

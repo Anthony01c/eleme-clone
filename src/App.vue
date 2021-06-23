@@ -13,8 +13,8 @@ export default {
   name: "App",
   components: {FooterGuide},
   async mounted() {
-    const reslut = await reqAddress('40.10038,116.36867')
-    console.log('reslut',reslut)
+    //通知action异步获取address并保存到state
+    this.$store.dispatch('getAddress')
   }
 }
 </script>
