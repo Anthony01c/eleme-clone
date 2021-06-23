@@ -309,8 +309,20 @@
 </template>
 
 <script>
+import Swiper from 'swiper'
+import 'swiper/css/swiper.min.css'
+
 export default {
-  name: "Msite"
+  name: "Msite",
+  mounted() {
+    //swiper 对象必须要在列表对象数据显示之后创建
+    new Swiper('.swiper-container',{
+      loop:true,
+      pagination:{
+        el:'.swiper-pagination',
+      }
+    })
+  }
 }
 </script>
 
