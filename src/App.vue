@@ -7,9 +7,15 @@
 
 <script>
 import FooterGuide from "@components/FooterGuide/FooterGuide";
+import {reqAddress} from "@/api";
+
 export default {
   name: "App",
-  components: {FooterGuide}
+  components: {FooterGuide},
+  async mounted() {
+    const reslut = await reqAddress('40.10038,116.36867')
+    console.log('reslut',reslut)
+  }
 }
 </script>
 

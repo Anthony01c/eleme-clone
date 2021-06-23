@@ -33,8 +33,18 @@ export default {
 
   methods:{
     goto(path){
-      //编程式路由跳转
-      this.$router.replace(path)
+      //1.如果点击当前项，没有任何效果
+     /* if (path != this.$route.path){
+        //编程式路由跳转
+        this.$router.replace(path)
+      }*/
+      //2.如果点击当前项，刷新界面
+      if (path != this.$route.path){
+        //编程式路由跳转
+        this.$router.replace(path)
+      }else {
+        window.location = path
+      }
     }
   }
 }
