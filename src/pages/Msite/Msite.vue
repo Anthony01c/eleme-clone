@@ -111,12 +111,19 @@ export default {
     this.$store.dispatch('getCategorys')
     this.$store.dispatch('getShops')
     //swiper 对象必须要在列表对象数据显示之后创建
-    new Swiper('.swiper-container',{
-      loop:true,
-      pagination:{
-        el:'.swiper-pagination',
-      }
-    })
+
+  },
+  watch:{
+    categorys(){ //categorys变化： [] ==> [....]
+      this.$nextTick(()=>{
+        new Swiper('.swiper-container',{
+          loop:true,
+          pagination:{
+            el:'.swiper-pagination',
+          }
+        })
+      })
+    }
   },
   computed:{
     ...mapState(['address','categorys','shops']),
