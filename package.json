@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "babel-plugin-component": "^1.1.1",
     "core-js": "^3.6.5",
     "lib-flexible": "^0.3.2",
+    "mint-ui": "^2.2.13",
     "postcss-px2rem": "^0.3.0",
     "swiper": "^5.4.5",
     "vue": "^2.6.11",
